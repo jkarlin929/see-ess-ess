@@ -9,18 +9,28 @@
 </head>
 
 <body>
-  <div>
-    <p>
-      Hello! Welcome.
+  <div class="panel" id="color-panel">
+    <p class="description">
+      Hello! Welcome. Select a color for the background.
     </p>
-    <input type="color" name="button">
+    <input id="color" type="color" name="button">
   </div>
 </body>
 
 </html>
 
 <style>
-  body {
-    background: white;
+  p.description {
+    background-color: white;
+    display: inline-block;
+  }
+  #color, .panel {
+    display: block;
   }
 </style>
+
+<script>
+  var color = document.querySelector('#color');
+  color.addEventListener("change", () => document.body.style.backgroundColor = color.value)
+  console.log('the color is', color);
+</script>
